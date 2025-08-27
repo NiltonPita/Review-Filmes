@@ -6,7 +6,7 @@ jobs:
         runs-on: ubuntu-latest 
         services:
           postgre:
-            image: postgrres:16.1
+            image: postgres:16.1
             env:
               POSTGRES_PASSWORD: Passw0rd2023!
               POSTGRES_user: review
