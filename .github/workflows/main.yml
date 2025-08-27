@@ -3,7 +3,16 @@ on:
     workflow_dispatch:  
 jobs:
     build-test:
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-latest 
+        services:
+          postgre:
+            image: postgrres:16.1
+            env:
+              POSTGRES_PASSWORD: Passw0rd2023!
+              POSTGRES_user: review
+              POSTGRES_DB: review
+            ports:
+              - 5432:5432
         steps:
             - name: Checkout
               uses: actions/checkout@v4
